@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Удалить статьи: {{ recipe.title }}
+{% endblock title %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <p>Вы действительно хотите удалить статью: {{ recipe.title }}</p>
+
+    <button class="btn btn-danger">Да</button>
+    <a href="{% url 'recipe_detail' recipe.pk %}" class="btn btn-dark">Нет</a>
+
+
+</form>
+{% endblock content %}
